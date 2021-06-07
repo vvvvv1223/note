@@ -36,3 +36,32 @@ var date1 = +new Date();
 // 方法三: h5新增
 Date.now();
 ```
+
+### 5 秒后自动跳转页面 并倒计时
+
+```js
+var div = document.getElementById("hh");
+var timer = 5;
+setInterval(() => {
+  if (timer == 0) {
+    location.href = "http://www.baidu.com";
+  } else {
+    div.innerHTML = "您将在" + timer + "秒后跳转到百度";
+  }
+  timer--;
+}, 1000);
+```
+
+### 数组去重 简易版
+```js
+// 数组去重 简易版
+// 遍历旧数组 用旧数组的元素查询新数组 如果该元素在新数组中则不添加
+var arr = ['c','a','z','a','x','a','x','c','b'];
+var newArr = [];
+arr.map((item,i,arr) => {
+if(newArr.indexOf(item) == -1) {
+  newArr.push(item);
+}
+})
+console.log(newArr); //["c", "a", "z", "x", "b"]
+```
